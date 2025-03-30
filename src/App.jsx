@@ -1,10 +1,11 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
+import VideoBg from './assets/VideoBG2.mp4'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <>
@@ -28,8 +29,25 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      <>
+        <video
+          width={'300'}
+          autoPlay
+          preload="auto"
+          loop
+          muted
+          playsInline
+          disablePictureInPicture
+          controlsList="nodownload nofullscreen noremoteplayback"
+          className="background-video"
+          onContextMenu={(e) => e.preventDefault()}
+          src={VideoBg}
+        >
+          Your browser does not support the video tag.
+        </video>
+      </>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
